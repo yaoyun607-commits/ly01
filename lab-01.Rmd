@@ -152,7 +152,7 @@ visitors %>%
 
 ## Question 6
 
-_What are the mean and median visitor numbers in 2022 across all attractions?_
+_What are the mean and median visitor numbers in 2022 across all attractions?_ 351942, 184639.5
 
 ```{r Q6}
 visitors %>% 
@@ -168,11 +168,11 @@ visitors %>%
 _Perform the same calculation for the 2021 admissions data._
 
 ```{r Ex_h}
-#visitors %>% 
-#  ______(
-#    __________,
-#    __________
-#  )
+visitors %>% 
+  summarise(
+    mean_2021 = mean(n_2021),
+    med_2021 = median(n_2021)
+  )
 ```
 
 All values in the output are `NA`!
@@ -183,7 +183,7 @@ _What does `NA` stand for and why are you getting this as your answer to the pre
 
 **Write your answer here**
 
-
+Because some data in the column n_2021 are not the numercial types, they missing cause the N/A special type
 
 
 ### Exercise j.
@@ -191,13 +191,21 @@ _What does `NA` stand for and why are you getting this as your answer to the pre
 _Look at the help pages for the `mean()` and `median()` commands to see what the input argument `na.rm` does. Edit your code from exercise h so that it computes the summary statistics where data is available._
 
 **Write your answer here**
+```{r Ex_h1}
+visitors %>% 
+  summarise(
+    mean_2021 = mean(n_2021,na.rm=TRUE),
+    med_2021 = median(n_2021,na.rm=TRUE)
+  )
+```
+
 
 
 
 
 ## Question 7
 
-_Which setting (inside, outside or mixed) has the largest mean visitor numbers in 2022?_
+_Which setting (inside, outside or mixed) has the largest mean visitor numbers in 2022?_ Inside
 
 ```{r Q7}
 visitors %>% 
@@ -212,18 +220,21 @@ visitors %>%
 
 _Observe in question 6 that the mean statistics across all settings are much larger than the corresponding median statistics. Discuss in your group what this suggests about the data._
 
+Means the data which is the lowest is very low and the Top50% value is very high(do not include the med_2022 value.)
+
 **Write your answer here**
 
 ## Question 8
+What are the max and min visitor numbers in 2021 across all attractions?
 
 ### Exercise l.
 
 ```{r Q8}
-#visitors %>% 
-#  summarise(
-#     __________,
-#     __________,
-#  )
+visitors %>% 
+  summarise(     
+     min_2021 = min(n_2021,na.rm=TRUE),
+     max_2021 = max(n_2021,na.rm=TRUE)
+ )
 ```
 
 ## Question 9
