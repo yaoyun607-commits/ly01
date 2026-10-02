@@ -265,8 +265,11 @@ _How many tourist attractions are there in each of the 4 nations? From this, dis
 
 
 ```{r Ex_l}
-#________ %>%
-#  ______(_______)
+visitors_with_nations%>%
+group_by(nation)%>%
+summarise(
+   number_of_attractions=n()
+ )
 ```
 
 
