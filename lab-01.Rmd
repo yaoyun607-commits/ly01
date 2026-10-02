@@ -24,7 +24,7 @@ visitors <- read_csv("data/UK-visitor-numbers.csv")
 
 ## Question 1
 
-_How many tourist attractions are there in the data set?_
+_How many tourist attractions are there in the data set?_348
 
 ```{r Q1}
 visitors %>% count()
@@ -53,7 +53,7 @@ _Create a frequency table by `admission` and `setting`._
 
 ## Question 2
 
-_What are the variable data types?_
+_What are the variable data types?_numercial variable
 
 ```{r Q2_part1}
 class(visitors$n_2022)
@@ -67,7 +67,7 @@ visitors %>% summarise_all(class)
 
 ## Question 3
 
-_Which attraction had the most number of visitors in 2022?_
+_Which attraction had the most number of visitors in 2022?_The Crown Estate at Windsor Great Park 
 
 ```{r Q3}
 visitors %>% arrange(desc(n_2022))
@@ -84,7 +84,7 @@ _What are the top 10 most visited attractions in 2021?_
 
 ## Question 4
 
-_What is the admission charge for the `"National Museum of Scotland"`?_
+_What is the admission charge for the `"National Museum of Scotland"`?_Free
 
 ```{r Q4}
 visitors %>% filter(attraction == "National Museum of Scotland")
@@ -111,7 +111,7 @@ _How many attraction had more than 1 million visitors in 2022?_
 
 ## Question 5
 
-_How many `"O"`utside attractions are there in the `"Yorkshire and the Humber"` region that gives `"Members"` free admission, which had more than 100,000 visitors in 2022?_
+_How many `"O"`utside attractions are there in the `"Yorkshire and the Humber"` region that gives `"Members"` free admission, which had more than 100,000 visitors in 2022?_Fountains Abbey Estate, Kirkstall Abbey,Royal Horticultural Society (RHS) Gardens at Harlow Carr.
 
 ```{r Q5}
 visitors %>%
